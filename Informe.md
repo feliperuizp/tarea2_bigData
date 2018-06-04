@@ -1,6 +1,6 @@
 ### Contributors:
-- Felipe Rojos
-- Felipe Ruiz
+- Felipe Rojos @farojos
+- Felipe Ruiz @feliperuizp
 
 # **Informe Tarea 2**
 
@@ -103,15 +103,22 @@ Confussion matrix Glove:
  [1925  559 1201 1263 1256 5062]]
 ```
 
-
 ### Actividad 6:
+
+Rendimiento?
+Comparar matrices de confusión?
 
 ## 3. **Entrenar un Modelo de Clasificación de Textos**
 
 ### Actividad 7:
 
+Indique el ´area tem´atica de los textos y tama˜no del set de datos utilizado. Tambi´en indique en caso que
+haya realizado alg´un tipo de preprocesamiento de los datos.
+
+El texto elegido es el primer libre de la saga Canción de hielo y fuego, titulado Juego de Tronos. El archivo es un .txt de 1.8mb, 25656 líneas, 1772149 carácteres y 316495 palabras.
+
+El preprocesamiento 
+
 ### Actividad 8:
 
 ### Actividad 9:
-
-![Prueba](./Imagenes/prueba.png)
