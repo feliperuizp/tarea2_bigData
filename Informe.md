@@ -272,16 +272,16 @@ Luego está el continente principal, donde hay 7 reinos y varias familias reales
 
 ```
 Cluster 2, top 10 palabras más comunes con sus frecuencias:
-['mano', 801],
-['tyrion', 597],
-['hacia', 575],
-['espada', 559],
-['mientra', 534],
-['bran', 513],
-['caballo', 481],
-['vez', 453],
-['dani', 444],
-['arya', 439]
+    ['mano', 801],
+    ['tyrion', 597],
+    ['hacia', 575],
+    ['espada', 559],
+    ['mientra', 534],
+    ['bran', 513],
+    ['caballo', 481],
+    ['vez', 453],
+    ['dani', 444],
+    ['arya', 439]
 Dispersion cluster 2:  1.1120688629206883
 Freq promedio cluster 2:  61.96994991652755
 ```
