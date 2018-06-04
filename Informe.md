@@ -51,7 +51,17 @@ Respecto a las palabras menos comunes en Large Movie Review Dataset:
 
 ### Actividad 2:
 
+Para BOW, se tomo el diccionario y se hizo un hash sobre el, lo que permitio crear un vector one hot por cada documento. Por otro lado, para W2V, se hizo promedio de los vectores resutantes por palabra del documento, ignorando las palabras que no aparecian en el vocabulario de W2V (no lograron ser codificadas). 
+
+Respecto a los labels, para ambos casos se uso 'pos' para mencionar el caso positivo, 'neg' para el caso negativo.
+
+Respecto a las palabras que no estaban en el set de training (Large Movie Review Dataset), estas fueron ignoradas.
+
+Por último, para Large Movie Review Dataset, se usaba tanta memoria que se ejecuto via consola y no por jupyter notebook (el kernel crasheaba antes de terminar), y en específico, en el caso de BOW, el vector resultante era tan grande, que se tuvo que entrenar el modelo, borrar la data de training y cargar la de testing (además de separar BOW de W2V en 2 instancias distintas para ahorrar memoria).
+
 ### Actividad 3:
+
+
 
 ## 2. **Análisis de sentimientos en Twitter**
 
