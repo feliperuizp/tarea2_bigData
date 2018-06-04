@@ -89,7 +89,7 @@ Por último, las matrices de confusion reportadas son las siguientes:
 
 Polarity dataset:
 
-- Peor caso: 
+### Peor caso
 
 - BOW:
 ```
@@ -102,7 +102,7 @@ Polarity dataset:
  [  0   0]]
 ```
 
-- Mejor Caso
+### Mejor Caso
 - BOW:
 ```
  [[178  22]
