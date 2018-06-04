@@ -89,7 +89,7 @@ Por último, las matrices de confusion reportadas son las siguientes:
 
 Polarity dataset:
 
-### Peor caso
+- Peor caso: 
 
 - BOW:
 ```
@@ -102,7 +102,7 @@ Polarity dataset:
  [  0   0]]
 ```
 
-### Mejor Caso
+- Mejor Caso
 - BOW:
 ```
  [[178  22]
@@ -227,7 +227,7 @@ Confussion matrix Glove:
 
 El rendimiento del modelo entrenado es pésimo para los 3 codificadores de vectores. Para FastText y Glove es un poco mejor que para Word2Vector. Esto se puede explicar ya que los tweets son generalmente palabras mal escritas y # que contienen varias palabras sin separar que no son entendidas por nuestro procesamiento de palabras.
 
-Consecuentemente, las matrices de confusión no obtienen un buen resultado, donde se ve claramente que nuestro modelo predice un resultado erróneo para la mayoría de los casos.
+Consecuentemente, las matrices de confusión no obtienen un buen resultado, donde se ve claramente que nuestro modelo predice un resultado erróneo para la mayoría de los casos, lo cual se ve reflejado en la poca cantidad de datos en la diagonal. De aquí, cabe destacar que W2V no ayudo para la codificación de uno de los labels, y que el error en todos los modelos usados no se debe a la predilección notoria de un label en específico.
 
 ## 3. **Entrenar un Modelo de Clasificación de Textos**
 
