@@ -4,6 +4,8 @@
 
 # **Informe Tarea 2**
 
+Todo el código está disponible en las carpetas pregunta1, pregunta2 y pregunta3 de este repositorio.
+
 ## 1. **Análisis de sentimientos en Críticas de películas**
 
 ### Actividad 1:
@@ -105,20 +107,181 @@ Confussion matrix Glove:
 
 ### Actividad 6:
 
-Rendimiento?
-Comparar matrices de confusión?
+El rendimiento del modelo entrenado es pésimo para los 3 codificadores de vectores. Para FastText y Glove es un poco mejor que para Word2Vector. Esto se puede explicar ya que los tweets son generalmente palabras mal escritas y # que contienen varias palabras sin separar que no son entendidas por nuestro procesamiento de palabras.
+
+Consecuentemente, las matrices de confusión no obtienen un buen resultado, donde se ve claramente que nuestro modelo predice un resultado erróneo para la mayoría de los casos.
 
 ## 3. **Entrenar un Modelo de Clasificación de Textos**
 
 ### Actividad 7:
 
-Indique el ´area tem´atica de los textos y tama˜no del set de datos utilizado. Tambi´en indique en caso que
-haya realizado alg´un tipo de preprocesamiento de los datos.
-
 El texto elegido es el primer libre de la saga Canción de hielo y fuego, titulado Juego de Tronos. El archivo es un .txt de 1.8mb, 25656 líneas, 1772149 carácteres y 316495 palabras.
 
-El preprocesamiento 
+Los datos fueron procesados en un Macbook Pro con i7-7920hq, SSD 1tb con tasa de transferencia de 2.5gb/s, 16gb de ram a 2400mH.
+
+El preprocesamiento fue de eliminar los stopwords, los símbolos irregulares, procesar con stemming todas las palabras y finalmente contar la ocurrencia de cada palabra.
+
+El resultado es un diccionario de la forma {"palabra": frecuencia}.
+
+El tiempo de entrenamiento del modelo es de 1.57 segundos.
+
+Las palabras más frecuentes son:
+
+```
+('dijo', 1608)
+('ser', 1231)
+('hombr', 1116)
+('si', 1108)
+('lord', 855)
+('jon', 838)
+('rey', 823)
+('mano', 801)
+('ned', 773)
+('señor', 703)
+
+```
 
 ### Actividad 8:
 
-### Actividad 9:
+Las 5 palabras que se consideran más relevantes en nuestro dataset y sus palabras respectivas más frecuentes son (las palabras respectivas que aparecen tienen coherencia semántica respecto a las palabras elegidas) :
+
+- Sansa
+```
+    1. ('arya', 0.9089903831481934)
+    2. ('decepciona', 0.821498453617096)
+    3. ('liláceo', 0.8086718320846558)
+    4. ('dama', 0.800781786441803)
+    5. ('mordan', 0.794775664806366)
+    6. ('soñast', 0.7854097485542297)
+    7. ('acompañando', 0.7653645277023315)
+    8. ('paseó', 0.7625895738601685)
+    9. ('legítima', 0.7607917785644531)
+    10. ('septa', 0.7587180137634277)
+```
+
+Arya es la hermana de Sansa. El resto son adjetivos y actividades sobre el personaje de Sansa.
+
+- Jon
+```
+    1. ('catelyn', 0.8442196846008301)
+    2. ('chico', 0.8186751008033752)
+    3. ('bran', 0.8016278743743896)
+    4. ('sam', 0.8001469969749451)
+    5. ('partí', 0.7918548583984375)
+    6. ('robb', 0.7882533073425293)
+    7. ('deserción', 0.7464160919189453)
+    8. ('sonrisa', 0.7454900741577148)
+    9. ('pyp', 0.740380585193634)
+    10.('clavando', 0.7379851937294006)
+```
+
+Catelyn es la madre, Bran y Robb son hermanos y Sam es su amigo. Deserción es cuando Robb deserta de una guerra.
+
+- Ned
+```
+    1. ('joffrey', 0.8286762833595276)
+    2. ('meñiqu', 0.8230651617050171)
+    3. ('cersei', 0.7824473977088928)
+    4. ('exenta', 0.7789955139160156)
+    5. ('robert', 0.7735979557037354)
+    6. ('inclinando', 0.7665606141090393)
+    7. ('quejado', 0.7642755508422852)
+    8. ('fruncido', 0.7628276944160461)
+    9. ('joff', 0.7614621520042419)
+    10. ('acompañando', 0.7599129676818848)
+```
+
+Joffrey (y joff) es el rey que condena a muerte a Ned. Meñique es un personaje relacionado con el rey. Cersei es la enemiga. Robert es su nombre. Las otras palabras son adjetivos y verbos relacionadas con él.
+
+
+- Lannister
+```
+    1. ('abism', 0.8227126002311707)
+    2. ('jaim', 0.7731848955154419)
+    3. ('hermano', 0.7717587351799011)
+    4. ('considerará', 0.7697587013244629)
+    5. ('escriba', 0.7456368207931519)
+    6. ('marchaba', 0.7370457649230957)
+    7. ('ventaja', 0.7346108555793762)
+    8. ('portavoz', 0.7309443354606628)
+    9. ('gnomo', 0.7308033108711243)
+    10.('bledo', 0.7282035946846008)
+```
+
+En este conjunto de palabras no se identifica tan claramente la relación. Jaime es un Lannister. Hay dos hermanos. Hay un Lannister que es portavoz del rey.
+
+- Targaryen
+```
+   1. ('aegon', 0.9806841611862183)
+   2. ('ori', 0.9668578505516052)
+   3. ('conquistador', 0.9617517590522766)
+   4. ('rhaegar', 0.9612633585929871)
+   5. ('conquistado', 0.9605289697647095)
+   6. ('aeri', 0.9520219564437866)
+   7. ('dorn', 0.9489178657531738)
+   8. ('alianza', 0.9429525136947632)
+   9. ('u', 0.9373108148574829)
+   10. ('corona', 0.9344648718833923) 
+```
+
+Aegon, Orys, Rhaegar, Aerion son personajes de la casa Targaryen.
+Son una familia real, por lo que corona, alianza y conquistador están relacionados.
+
+Por último se realiza un k-means con las palabras de nuestro modelo. Para elegir el k, se utilizó el método Elbow. Se elige k=5 ya que es el k cuando el modelo empieza a mejorar muy poco al aumentar el k.
+
+![Elbow Method](./imagenes/elbow.png)
+
+Los resultados son:
+```
+Cluster 0, top 10 palabras más comunes con sus frecuencias:
+    ['colemon', 13], 
+    ['pausa', 12],
+    ['conquistador', 12],
+    ['equivocado', 11],
+    ['arrancarl', 11],
+    ['imaginado', 11],
+    ['reunido', 11],
+    ['othor', 11],
+    ['dedicado', 10]]
+Dispersion cluster 0:  0.7725061042655149
+Freq promedio cluster 0:  3.317608991825613
+```
+Este cluster representa palabras poco frecuentes en el libro (promedio bajo), con poca dispersión. Es decir que son poco relevantes y no están relacionados con eventos ni personajes importantes del libro.
+
+Para analizar los dos clusters siguientes, es importante comentar el contexto del libro.
+
+En el libro hay dos continentes, en uno hay una heredera al trono Targaryen que tiene dos dragones. Durante el libro con sus dragones y tropas conquista ciudades. El cluster 1 tiene palabras relacionadas a esta parte de la historia. Por lo tanto se explica que la frencuencia de las palabras sea más alta, pero no la mayor, ya que esta es como la historia secundaria.
+
+```
+Cluster 1, top 10 palabras más comunes con sus frecuencias:
+    ['tan', 578],
+    ['dos', 391],
+    ['gran', 256],
+    ['tres', 198],
+    ['vino', 175],
+    ['castillo', 164],
+    ['dragón', 151],
+    ['último', 131],
+    ['viseri', 122],
+    ['part', 121]
+Dispersion cluster 1:  0.8215536927288243
+Freq promedio cluster 1:  14.129516658845612
+```
+
+Luego está el continente principal, donde hay 7 reinos y varias familias reales: Lannister, Stark que están en guerra. El cluster 2 son palabras relacionadas con los personajes principales de la historia que ocurre en este continente.
+
+```
+Cluster 2, top 10 palabras más comunes con sus frecuencias:
+['mano', 801],
+['tyrion', 597],
+['hacia', 575],
+['espada', 559],
+['mientra', 534],
+['bran', 513],
+['caballo', 481],
+['vez', 453],
+['dani', 444],
+['arya', 439]
+Dispersion cluster 2:  1.1120688629206883
+Freq promedio cluster 2:  61.96994991652755
+```
