@@ -119,7 +119,7 @@ El texto elegido es el primer libre de la saga Canción de hielo y fuego, titula
 
 Los datos fueron procesados en un Macbook Pro con i7-7920hq, SSD 1tb con tasa de transferencia de 2.5gb/s, 16gb de ram a 2400mH.
 
-El preprocesamiento fue de eliminar los stopwords, los símbolos irregulares, procesar con stemming todas las palabras y finalmente contar la ocurrencia de cada palabra.
+El preprocesamiento fue de eliminar los stopwords, los símbolos irregulares, procesar con stemming todas las palabras y finalmente contar la ocurrencia de cada palabra. Sobre eso corremos un modelo word to vector, con 100 features y 10 epochs de entrenamiento.
 
 El resultado es un diccionario de la forma {"palabra": frecuencia}.
 
@@ -143,7 +143,7 @@ Las palabras más frecuentes son:
 
 ### Actividad 8:
 
-Las 5 palabras que se consideran más relevantes en nuestro dataset y sus palabras respectivas más frecuentes son (las palabras respectivas que aparecen tienen coherencia semántica respecto a las palabras elegidas) :
+Las 5 palabras que se consideran más relevantes en nuestro dataset(apreciación personal) y sus palabras respectivas más frecuentes son (las palabras respectivas que aparecen tienen coherencia semántica respecto a las palabras elegidas) :
 
 - Sansa
 ```
