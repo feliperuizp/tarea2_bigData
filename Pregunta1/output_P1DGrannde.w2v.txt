@@ -1,0 +1,21 @@
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /Users/feliperojos/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+188827
+('exorcistbut', 1)
+('badmitton', 1)
+('membershipbr', 1)
+('dilemmasbr', 1)
+('freedomhat', 1)
+('br', 172997)
+('movi', 148728)
+('film', 140146)
+('one', 80787)
+('like', 66619)
+Training Set Accuracy W2V: 0.86848
+Testing Set Accuracy W2V: 0.86828
+
+
+Confussion matrix W2V:
+ [[10785  1715]
+ [ 1578 10922]]
