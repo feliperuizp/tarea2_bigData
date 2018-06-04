@@ -10,6 +10,45 @@ Todo el código está disponible en las carpetas pregunta1, pregunta2 y pregunta
 
 ### Actividad 1:
 
+Para esta parte de la tarea, se uso el mismo preprocesamiento en ambos metodos (bow, w2v) por lo que el diccionario resultante es el mismo (independiente que w2v pueda no encontrar una codificación). Se uso regex para eliminar terminos especiales (',','.',.....). Se uso stemming para cada palabra, lo que dejo el siguiente diccionario en cada dataset:
+
+- Polarity dataset : 31749
+- Large Movie Review Dataset : 188827
+
+Respecto a las palabras más comunes en Polarity dataset:
+
+- ('film', 11108)
+- ('movi', 6855)
+- ('one', 5758)
+- ('like', 3997)
+- ('charact', 3855)
+
+Respecto a las palabras menos comunes en Polarity dataset:
+
+- ('santostefano', 1)
+- ('alin', 1)
+- ('brosh', 1)
+- ('romanticmistaken', 1)
+- ('bulimia', 1)
+
+Respecto a las palabras más comunes en Large Movie Review Dataset:
+
+- ('br', 172997)
+- ('movi', 148728)
+- ('film', 140146)
+- ('one', 80787)
+- ('like', 66619)
+
+Respecto a las palabras menos comunes en Large Movie Review Dataset:
+
+- ('exorcistbut', 1)
+- ('badmitton', 1)
+- ('membershipbr', 1)
+- ('dilemmasbr', 1)
+- ('freedomhat', 1)
+
+
+
 ### Actividad 2:
 
 ### Actividad 3:
