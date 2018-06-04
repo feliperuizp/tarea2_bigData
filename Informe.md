@@ -159,7 +159,7 @@ Las 5 palabras que se consideran más relevantes en nuestro dataset y sus palabr
     10. ('septa', 0.7587180137634277)
 ```
 
-Arya es la hermana de Sansa. El resto son adjetivos y actividades sobre el personaje de Sansa.
+Arya es la hermana de Sansa. El resto son adjetivos y actividades sobre el personaje de Sansa. Un ejemplo claro es septa, mujeres con las cuales Sansa tiene una gran interacción.
 
 - Jon
 ```
@@ -175,7 +175,7 @@ Arya es la hermana de Sansa. El resto son adjetivos y actividades sobre el perso
     10.('clavando', 0.7379851937294006)
 ```
 
-Catelyn es la madre, Bran y Robb son hermanos y Sam es su amigo. Deserción es cuando Robb deserta de una guerra.
+Catelyn es la madre adoptiva, Bran y Robb son hermanos y Sam es su amigo. Deserción es cuando Jon quiere desertar a los nigth watch para acompañar a su hermano Robb a la guerra para recuperar a su padre.
 
 - Ned
 ```
@@ -191,8 +191,7 @@ Catelyn es la madre, Bran y Robb son hermanos y Sam es su amigo. Deserción es c
     10. ('acompañando', 0.7599129676818848)
 ```
 
-Joffrey (y joff) es el rey que condena a muerte a Ned. Meñique es un personaje relacionado con el rey. Cersei es la enemiga. Robert es su nombre. Las otras palabras son adjetivos y verbos relacionadas con él.
-
+Joffrey (y joff) es hijo de robbert y heredero al trono, el cual lo declara a muerte por intento de apropiación del trono.  Meñique es un personaje relacionado con toda la realeza, el cual estaba enamorado de su esposa Catelyn y tambien lo traisiona al momento de tomar el trono. Cersei es la enemiga y la esposa de su mejor amigo. Robbert es su mejor amigo y el rey de westeros.
 
 - Lannister
 ```
@@ -225,9 +224,11 @@ En este conjunto de palabras no se identifica tan claramente la relación. Jaime
 ```
 
 Aegon, Orys, Rhaegar, Aerion son personajes de la casa Targaryen.
-Son una familia real, por lo que corona, alianza y conquistador están relacionados.
+Son una familia real, por lo que corona, alianza y conquistador están relacionados. Dorn es un reino el cual tiene buenas relaciones con esta casa. Conquistado tiene que ver con que ellos tuvieron el poder completo de westeros mediante la fuerza (de sus dragones). 
 
-Por último se realiza un k-means con las palabras de nuestro modelo. Para elegir el k, se utilizó el método Elbow. Se elige k=5 ya que es el k cuando el modelo empieza a mejorar muy poco al aumentar el k.
+Dado lo anterior, podemos ver una clara relación entre estas palabras elegidas (con sus mas similares).
+
+Por último se realiza un k-means con las palabras de nuestro modelo. Para elegir el k, se utilizó el método Elbow. Se elige k=5 ya que es el k cuando el modelo empieza a mejorar muy poco su dispersión al aumentar el k. Por último, se analiza la dispersión, frecuencia promedio y las palabras más significativas de los cluster elegidos.
 
 ![Elbow Method](./Imagenes/elbow.png)
 
@@ -246,11 +247,9 @@ Cluster 0, top 10 palabras más comunes con sus frecuencias:
 Dispersion cluster 0:  0.7725061042655149
 Freq promedio cluster 0:  3.317608991825613
 ```
-Este cluster representa palabras poco frecuentes en el libro (promedio bajo), con poca dispersión. Es decir que son poco relevantes y no están relacionados con eventos ni personajes importantes del libro.
+Este cluster representa palabras poco frecuentes en el libro (promedio bajo, solo aparición promedio < 4 por palabra), por lo que el embeding creado por w2v no los relaciona mucho con otros conceptos, dejando asi un cluster con baja dispersión (dado que no hay mucha informacion para para relacionarlos con otros conceptos). Es decir que son poco relevantes y no están relacionados con eventos ni personajes importantes del libro.
 
 Para analizar los dos clusters siguientes, es importante comentar el contexto del libro.
-
-En el libro hay dos continentes, en uno hay una heredera al trono Targaryen que tiene dos dragones. Durante el libro con sus dragones y tropas conquista ciudades. El cluster 1 tiene palabras relacionadas a esta parte de la historia. Por lo tanto se explica que la frencuencia de las palabras sea más alta, pero no la mayor, ya que esta es como la historia secundaria.
 
 ```
 Cluster 1, top 10 palabras más comunes con sus frecuencias:
@@ -267,8 +266,7 @@ Cluster 1, top 10 palabras más comunes con sus frecuencias:
 Dispersion cluster 1:  0.8215536927288243
 Freq promedio cluster 1:  14.129516658845612
 ```
-
-Luego está el continente principal, donde hay 7 reinos y varias familias reales: Lannister, Stark que están en guerra. El cluster 2 son palabras relacionadas con los personajes principales de la historia que ocurre en este continente.
+En el cluster 1 podemos ver como las palabras mas significativas del cluster tienen que ver un concepto, los Targaryen. Castillo, dragón, viseri(viserys targaryen, hermano de danearys), último(son los ultimos herederos de la casa de Targaryen)
 
 ```
 Cluster 2, top 10 palabras más comunes con sus frecuencias:
@@ -285,3 +283,5 @@ Cluster 2, top 10 palabras más comunes con sus frecuencias:
 Dispersion cluster 2:  1.1120688629206883
 Freq promedio cluster 2:  61.96994991652755
 ```
+
+Por último, el cluster 2 muestra a personajes y conceptos relacionados con ellos. Por ejemplo mano hace mención a la mano derecha del rey(eddard stark), Tyrion es un Lannister, Bran es un stark, Dani es la forma en que Viserys se dirije a su hermana Danearys, arya es una stark. La dispersion en este cluster se debe a que sus palabras aparecen tanto en el libro que se pueden relacionar con demasiados conceptos, sobretodo con acciones.
