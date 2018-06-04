@@ -61,6 +61,75 @@ Por último, para Large Movie Review Dataset, se usaba tanta memoria que se ejec
 
 ### Actividad 3:
 
+Para el clasificador, se usó SVM.SVC de la libreria sklearn. Para KFolds de sklearn con k=5. Dado lo anterior, se obtienen los siguientes resultados:
+
+Accuracy training global Polarity dataset:
+
+- BOW: 1
+- W2V: (0.799375+0.810625+ 0.786875+ 0.800625+0.798125)/5 = 0.799125
+
+Accuracy testing global Polarity dataset:
+
+- BOW: (0.765 + 0.7625 + 0.85 + 0.75 +  0.7875)/5 = 0.783
+- W2V: (0.6425 + 0.6075 + 0.7725 + 0.5725 + 0.66)/5 = 0.651
+
+Accuracy training global Large Movie Review Dataset:
+
+- BOW: 0.99996
+- W2V: 0.86848
+
+Accuracy testing global Large Movie Review Dataset:
+
+- BOW: 0.83684
+- W2V: 0.86828
+
+De lo anterior, podemos ver que para un dataset pequeño, BOW funciona mejor que W2V, esto debido a la penalizacion de no encontrar una embeding de una palabra (he ignorarla en nuestro caso). En cambio, cuando el dataset es más grande, las palabras no codificadas no afectan mucho en el performance. Otro punto, es que el promedio de los vectores puede ser un poco naive, quizas con una red neuronal podriamos encontrar un mejor metodo de combinación que el promedio de los vectores.
+
+Por último, las matrices de confusion reportadas son las siguientes:
+
+Polarity dataset:
+
+- Peor caso: 
+
+- BOW:
+```
+ [[300 100]
+ [  0   0]]
+```
+- W2V:
+```
+ [[229 171]
+ [  0   0]]
+```
+
+- Mejor Caso
+- BOW:
+```
+ [[178  22]
+ [ 38 162]]
+```
+- W2V:
+```
+Confussion matrix W2V:
+ [[158  42]
+ [ 49 151]]
+```
+Algo relevante de este dataset. Tanto el mejor caso de BOW y W2V estan en el mismo fold, lo que se replica tambien para el peor caso. 
+
+Large Movie Review Dataset
+
+- BOW:
+```
+ [[10641  1859]
+ [ 2220 10280]]
+ ```
+
+- W2V:
+```
+ [[10785  1715]
+ [ 1578 10922]]
+```
+
 
 
 ## 2. **Análisis de sentimientos en Twitter**
