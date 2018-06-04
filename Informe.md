@@ -229,7 +229,7 @@ Son una familia real, por lo que corona, alianza y conquistador están relaciona
 
 Por último se realiza un k-means con las palabras de nuestro modelo. Para elegir el k, se utilizó el método Elbow. Se elige k=5 ya que es el k cuando el modelo empieza a mejorar muy poco al aumentar el k.
 
-![Elbow Method](./imagenes/elbow.png)
+![Elbow Method](./Imagenes/elbow.png)
 
 Los resultados son:
 ```
