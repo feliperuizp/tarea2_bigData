@@ -1,0 +1,20 @@
+188827
+('exorcistbut', 1)
+('badmitton', 1)
+('membershipbr', 1)
+('dilemmasbr', 1)
+('freedomhat', 1)
+('br', 172997)
+('movi', 148728)
+('film', 140146)
+('one', 80787)
+('like', 66619)
+Training Set Accuracy BOW: 0.99996
+Deleating training data
+Training data deleted
+Testing Set Accuracy BOW: 0.83684
+
+
+Confussion matrix BOW:
+ [[10641  1859]
+ [ 2220 10280]]
